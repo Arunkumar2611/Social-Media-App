@@ -2,6 +2,7 @@ import PostMessage from "../models/postMessage.js";
 
 export const getPosts = async (req, res) => {
     try {
+        console.log("INSIDE GET")
         const postMessages = await PostMessage.find();
         console.log(postMessages);
         res.status(200).json(postMessages);
@@ -11,9 +12,10 @@ export const getPosts = async (req, res) => {
 }
 
 export const createPost = async (req, res) => {
-    const post = req.body();
-    
-    const newPost = new PostMessage();
+    console.log("INSIDE CREATE");
+    const post = req.body;
+    console.log("body data", req)
+    const newPost = new PostMessage(post);
     try {
         await newPost.save();
         res.status(201).json(newPost);
