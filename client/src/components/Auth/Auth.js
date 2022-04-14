@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import useStyles from "./style";
 import Input from "./Input";
+import { useNavigate } from "react-router-dom";
 import Icon from './icon';
 import { GoogleLogin } from "react-google-login";
 
@@ -19,6 +20,7 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const classes = useStyles();
 
   const handleSubmit = () => {};
@@ -39,6 +41,8 @@ const Auth = () => {
     const token = res?.tokenId;
     try {
         dispatch({type: 'AUTH', data: { result, token }})
+
+        navigate('/');
     } catch (error) {
         console.log(error);
     }
