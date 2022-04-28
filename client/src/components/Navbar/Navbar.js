@@ -47,7 +47,7 @@ function Navbar() {
                         <Button className={classes.logout} variant="contained" color="secondary" onClick={logout}>Logout</Button>
                     </div>
                 ) : (
-                    <Button component={Link} to="/auth" variant="contained" color="primary">Sign in</Button>
+                    <Button component={Link} to="/auth" navigate='/auth' variant="contained" color="primary">Sign in</Button>
                 )}
             </Toolbar>
         </AppBar>
