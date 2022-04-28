@@ -1,9 +1,12 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constant/constant';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE, FETCH_BY_SEARCH } from '../constant/constant';
 
 export default (posts = [], action) => {
     switch(action.type) {
         case FETCH_ALL:
             return action.payload;
+        case FETCH_BY_SEARCH:
+            console.log("jJjjjjjjjjjjjjjjjjjj", action.payload);
+            return action.payload
         case CREATE:
             return [...posts, action.payload]
         case UPDATE:
