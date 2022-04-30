@@ -11,9 +11,9 @@ import {
 } from '../constant/constant';
 //  action creaters
 /* Action creater are funciton that return actions */
-export const getPosts = () => async (dispatch) => {
+export const getPosts = (page) => async (dispatch) => {
     try {
-        const { data } = await api.fetchPosts();
+        const { data } = await api.fetchPosts(page);
 
         dispatch({ type: FETCH_ALL, payload: data });
     } catch (error) {
