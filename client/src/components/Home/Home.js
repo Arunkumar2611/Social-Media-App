@@ -9,7 +9,7 @@ import {
   Button,
 } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { getPosts, getPostsBySearch } from "../../actions/posts";
+import { getPostsBySearch } from "../../actions/posts";
 import Form from "../Form/Form";
 import Posts from "../Posts/Posts";
 import useStyle from "./styles";
