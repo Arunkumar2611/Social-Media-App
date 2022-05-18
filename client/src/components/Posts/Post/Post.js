@@ -60,7 +60,7 @@ const Post = ({ post, setCurrentId }) => {
 
     return (
         <Card className={classes.card} raised elevation={6}>
-            <ButtonBase className={classes.cardAction} onClick={openPost} >
+            <ButtonBase className={classes.cardAction} onClick={openPost}>
             <CardMedia
                 className={classes.media}
                 image={post.selectedFile}
@@ -83,7 +83,8 @@ const Post = ({ post, setCurrentId }) => {
                             <MoreHorizIcon fontSize="default" />
                         </Button>
                     </div>
-                )}
+                )
+            }
             <div className={classes.details}>
                 <Typography variant="body2" color="textSecondary" component="h2">
                     {post.tags.map((tag) => `#${tag} `)}
